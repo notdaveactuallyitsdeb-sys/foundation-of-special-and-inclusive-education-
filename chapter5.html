@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapter 5 - Typical and Atypical Development</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#F8F6F2;
+  --text:#2C2C2C;
+  --accent:#7A9EB1;
+  --accent-dark:#5f8194;
+  --gold:#D8B36A;
+  --white:#ffffff;
+  --shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.9;
+}
+
+/* HERO */
+
+.hero{
+  min-height:60vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+  url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1400&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  color:white;
+  padding:50px 20px;
+}
+
+.hero-content h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,7vw,5rem);
+}
+
+.hero-content p{
+  font-size:1.2rem;
+  margin-top:10px;
+}
+
+/* MAIN CONTENT */
+
+.container{
+  width:90%;
+  max-width:900px;
+  margin:auto;
+  padding:80px 0;
+}
+
+.article-card{
+  background:white;
+  padding:50px;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+}
+
+.article-card h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.3rem;
+  margin-bottom:25px;
+}
+
+blockquote{
+  margin:30px 0;
+  padding:25px;
+  background:#f6f5f2;
+  border-left:5px solid var(--gold);
+  border-radius:15px;
+  font-style:italic;
+  font-size:1.3rem;
+  font-family:'Playfair Display',serif;
+}
+
+.featured-image{
+  margin:35px 0;
+}
+
+.featured-image img{
+  width:100%;
+  border-radius:20px;
+}
+
+.article-card p{
+  margin-bottom:25px;
+  font-size:1.05rem;
+}
+
+.tags{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+
+.tags span{
+  background:#edf3f6;
+  color:#5b7b8b;
+  padding:10px 18px;
+  border-radius:50px;
+  font-size:0.9rem;
+  font-weight:600;
+}
+
+.back-btn{
+  display:inline-block;
+  margin-top:40px;
+  text-decoration:none;
+  background:linear-gradient(to right,var(--accent),#97b5c4);
+  color:white;
+  padding:14px 28px;
+  border-radius:50px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.back-btn:hover{
+  background:linear-gradient(to right,var(--accent-dark),var(--accent));
+}
+
+footer{
+  text-align:center;
+  padding:50px 20px;
+  color:#666;
+}
+
+@media(max-width:768px){
+
+.article-card{
+  padding:30px;
+}
+
+.hero-content h1{
+  font-size:2.8rem;
+}
+
+blockquote{
+  font-size:1.1rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+```
+<h1>Chapter 5</h1>
+
+<p>Typical and Atypical Development</p>
+```
+
+  </div>
+
+</section>
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+  <div class="article-card">
+
+```
+<h2>Typical and Atypical Development</h2>
+
+<blockquote>
+  “Growth isn’t a race; it’s a personal journey.”
+</blockquote>
+
+<div class="featured-image">
+
+<img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1400&auto=format&fit=crop"
+alt="Children learning and growing">
+</div>
+
+<!-- =======================================
+     ILAGAY ANG BUONG REFLECTION ESSAY MO DITO
+     PALITAN ANG MGA SAMPLE PARAGRAPHS SA IBABA
+======================================== -->
+
+<p >
+  This chapter felt like a journey through time, thinking about how we grow from tiny babies into adults. It made me feel very curious and reflective about my own childhood. Reading about the different stages of development made me realize how delicate and amazing the human brain is. It gave me a sense of wonder about how much we learn in such a short amount of time, and it made me feel more compassionate toward children.
+</p>
+
+<p>
+The most important thing I learned is that typical is just a range, and every child grows at their own pace. I realized that when a child isn't meeting a milestone, it’s not a failure—it’s just a sign that they might need a different kind of support. Learning about theories from people like Piaget and Vygotsky helped me understand that kids don't just think like little adults they have their own unique way of seeing and interacting with the world.
+</p>
+
+<p>
+This has changed the way I interact with the children in my life, like my younger siblings or cousins. I now realize that when they misbehave or struggle, there might be a developmental reason behind it. I will try to be more patient and meet them where they are, rather than where I think they should be. It has taught me to celebrate the small steps and to understand that growth isn't a race, it's a personal journey.
+</p>
+
+<!-- END OF REFLECTION ESSAY -->
+
+<div class="tags">
+
+  <span>Childhood</span>
+  <span>Growth</span>
+  <span>Understaning</span>
+
+</div>
+
+<a href="index.html" class="back-btn">
+  ← Back to Home
+</a>
+```
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 — The Spaces We Share
+</footer>
+
+</body>
+</html>

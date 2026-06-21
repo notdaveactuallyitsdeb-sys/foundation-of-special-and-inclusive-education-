@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>The Spaces We Share</title>
+
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   ROOT COLORS
+========================= */
+
+:root{
+  --bg:#F8F6F2;
+  --text:#2C2C2C;
+  --accent:#7A9EB1;
+  --accent-dark:#5f8194;
+  --gold:#D8B36A;
+  --white:#ffffff;
+  --card:rgba(255,255,255,0.78);
+  --shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.8;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.skip-link{
+  position:absolute;
+  left:-999px;
+  top:auto;
+}
+
+.skip-link:focus{
+  left:20px;
+  top:20px;
+  background:black;
+  color:white;
+  padding:10px 18px;
+  z-index:9999;
+  border-radius:8px;
+}
+
+button:focus,
+a:focus{
+  outline:3px solid var(--gold);
+  outline-offset:4px;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-bar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:0%;
+  height:5px;
+  background:linear-gradient(to right,var(--accent),var(--gold));
+  z-index:9999;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:999;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.55);
+  border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  font-weight:700;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--text);
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  color:white;
+  padding:120px 20px;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero h1{
+  font-size:clamp(3rem,8vw,5.5rem);
+  font-family:'Playfair Display',serif;
+  line-height:1.1;
+  margin-bottom:25px;
+}
+
+.hero p{
+  font-size:1.2rem;
+  opacity:0.95;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+  padding:100px 0;
+  text-align:center;
+}
+
+.intro h2{
+  font-size:clamp(2rem,5vw,3rem);
+  font-family:'Playfair Display',serif;
+  margin-bottom:30px;
+}
+
+.intro p{
+  max-width:800px;
+  margin:auto;
+  font-size:1.08rem;
+}
+
+/* =========================
+   CHAPTERS
+========================= */
+
+#chapters{
+  padding-bottom:100px;
+}
+
+.chapter-card{
+  margin-bottom:35px;
+  border-radius:28px;
+  overflow:hidden;
+  background:var(--card);
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow);
+  transition:0.4s ease;
+}
+
+.chapter-card:hover{
+  transform:translateY(-4px);
+}
+
+/* =========================
+   CHAPTER BUTTON
+========================= */
+
+.chapter-btn{
+  width:100%;
+  border:none;
+  background:linear-gradient(to right,var(--accent),#97b5c4);
+  color:white;
+
+  padding:25px 30px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  font-size:1.08rem;
+  font-weight:600;
+
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.chapter-btn:hover{
+  background:linear-gradient(to right,var(--accent-dark),var(--accent));
+}
+
+.chapter-btn.active{
+  background:linear-gradient(to right,var(--accent-dark),#6f95a8);
+}
+
+.icon{
+  font-size:2rem;
+  transition:0.3s;
+}
+
+.chapter-btn.active .icon{
+  transform:rotate(45deg);
+}
+
+/* =========================
+   CHAPTER CONTENT
+========================= */
+
+.chapter-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.7s ease;
+  background:white;
+}
+
+.chapter-content.show{
+  max-height:3000px;
+}
+
+/* =========================
+   CHAPTER IMAGE
+========================= */
+
+.chapter-image{
+  width:100%;
+  height:420px;
+  overflow:hidden;
+}
+
+.chapter-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.5s ease;
+}
+
+.chapter-image:hover img{
+  transform:scale(1.05);
+}
+
+/* =========================
+   REFLECTION BOX
+========================= */
+
+.reflection-box{
+  padding:45px;
+}
+
+.reflection-box h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,3rem);
+  margin-bottom:25px;
+}
+
+.reflection-box p{
+  margin-bottom:25px;
+  font-size:1.05rem;
+  color:#444;
+}
+
+/* =========================
+   QUOTES
+========================= */
+
+blockquote{
+  margin:35px 0;
+
+  padding:30px;
+
+  background:#f6f5f2;
+
+  border-left:5px solid var(--gold);
+
+  border-radius:18px;
+
+  font-size:1.4rem;
+  font-style:italic;
+
+  font-family:'Playfair Display',serif;
+
+  color:#555;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tags{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+
+.tags span{
+  background:#edf3f6;
+  color:#5b7b8b;
+
+  padding:10px 18px;
+
+  border-radius:50px;
+
+  font-size:0.9rem;
+  font-weight:600;
+}
+
+/* =========================
+   LESSONS
+========================= */
+
+.lessons{
+  padding:100px 0;
+}
+
+.lessons h2{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,3rem);
+  margin-bottom:50px;
+}
+
+.lesson-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.lesson-card{
+  background:white;
+  padding:35px;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  transition:0.4s;
+}
+
+.lesson-card:hover{
+  transform:translateY(-6px);
+}
+
+.lesson-card h3{
+  margin-bottom:15px;
+  font-family:'Playfair Display',serif;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  background:#ece7df;
+  text-align:center;
+  padding:70px 20px;
+}
+
+footer h2{
+  font-family:'Playfair Display',serif;
+  margin-bottom:20px;
+}
+
+/* =========================
+   FADE ANIMATION
+========================= */
+
+.fade-up{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+.fade-up.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .chapter-btn{
+    padding:22px;
+    font-size:1rem;
+  }
+
+  .reflection-box{
+    padding:28px;
+  }
+
+  .chapter-image{
+    height:260px;
+  }
+
+  blockquote{
+    font-size:1.1rem;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">
+Skip to Content
+</a>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <div class="nav-container">
+
+    <div class="logo">
+      The Spaces We Share
+    </div>
+
+    <div class="nav-links">
+
+  <a href="#intro">Intro</a>
+
+  <a href="#chapters">Chapters</a>
+
+  <a href="#lessons">Lessons</a>
+
+  <a href="about.html">About the Author</a>
+
+</div>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content fade-up">
+
+    <h1>The Spaces We Share</h1>
+
+    <p>
+      Reflections on Diversity, Inclusion, Empathy, and Humanity
+    </p>
+
+  </div>
+
+</section>
+
+<main id="main-content">
+
+<!-- INTRO -->
+
+<section class="intro" id="intro">
+
+<div class="container fade-up">
+
+<h2>Why This Reflection Matters</h2>
+
+<p>
+This reflection is more than a collection of lessons learned.
+It is a journey through empathy, inclusion, compassion,
+and social awareness. Every chapter reminds us that
+education becomes meaningful when every learner feels seen,
+heard, respected, and included.
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+     CHAPTERS SECTION
+========================= -->
+
+<section id="chapters">
+
+<div class="container">
+  
+<!-- =========================
+     CHAPTER 1
+========================= -->
+
+<div class="chapter-card fade-up">
+
+    <a href="chapter1.html"
+       class="chapter-btn"
+       style="text-decoration:none;">
+
+        <span>Chapter 1 — Understanding Diversity</span>
+
+        <span class="icon">→</span>
+
+    </a>
+
+    <div class="chapter-content show">
+
+        <div class="chapter-image">
+
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1400&auto=format&fit=crop"
+            alt="Diverse students smiling together">
+
+        </div>
+
+        <div class="reflection-box">
+
+            <h2>Understanding Diversity</h2>
+
+            <blockquote>
+                “Being different is actually the most natural thing in the world.”
+            </blockquote>
+
+            <p>
+                When I first started reading about diversity, I felt overwhelmed by how different we all really are.
+            </p>
+
+            <p>
+                I learned that diversity isn't just about appearance,
+                but also about beliefs, experiences, and invisible struggles.
+            </p>
+
+            <div class="tags">
+                <span>Empathy</span>
+                <span>Identity</span>
+                <span>Awareness</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     CHAPTER 2
+========================= -->
+
+<div class="chapter-card fade-up">
+
+    <a href="chapter2.html"
+       class="chapter-btn"
+       style="text-decoration:none;">
+
+        <span>Chapter 2- Addressing Diversity Through the Years</span>
+
+        <span class="icon">→</span>
+
+    </a>
+
+    <div class="chapter-content show">
+
+        <div class="chapter-image">
+
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1400&auto=format&fit=crop"
+            alt="Accessibility and inclusion">
+
+
+        </div>
+
+        <div class="reflection-box">
+
+            <h2>Addressing Diversity Through the Year</h2>
+
+            <blockquote>
+               “It’s society that needs to change its ways, not the individual who needs to be fixed."
+            </blockquote>
+
+            <p>
+              Learning about the history of inclusion made me realize how unfair society once was toward people with disabilitie.
+            </p>
+
+            <p>
+                This chapter inspire me to become more socially aware and advocate for fairness and accessibility.
+            </p>
+
+            <div class="tags">
+                <span>Justice</span>
+                <span>Inclusion</span>
+                <span>Human Rights</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     CHAPTER 3
+========================= -->
+<div class="chapter-card fade-up">
+
+    <a href="chapter3.html"
+       class="chapter-btn"
+       style="text-decoration:none;">
+
+        <span>Chapter 3- Making School Inclusive</span>
+
+        <span class="icon">→</span>
+
+    </a>
+
+    <div class="chapter-content show">
+
+        <div class="chapter-image">
+
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1400&auto=format&fit=crop" 
+            alt="Inclusive classroom">
+
+
+        </div>
+
+        <div class="reflection-box">
+
+            <h2>Making School Inclusive</h2>
+
+            <blockquote>
+             “A school should feel like a place where everyone belongs.”
+            </blockquote>
+
+            <p>
+             This chapter made me feel hopeful because it showed that inclusion is possible.
+            </p>
+
+            <p>
+                I learned that education becomes more meaningful when schools become flexible and compassionate.
+            </p>
+
+            <div class="tags">
+                <span>Belonging</span>
+                <span>Education</span>
+                <span>Hope</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CHAPTER 4
+========================= -->
+<div class="chapter-card fade-up">
+
+    <a href="chapter4.html"
+       class="chapter-btn"
+       style="text-decoration:none;">
+
+        <span>Chapter 4- Components of Special and Inclusive Education</span>
+
+        <span class="icon">→</span>
+
+    </a>
+
+    <div class="chapter-content show">
+
+        <div class="chapter-image">
+
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1400&auto=format&fit=crop" 
+            alt="Teacher helping students">
+
+
+        </div>
+
+        <div class="reflection-box">
+
+            <h2>Components of Special and Inclusive Education</h2>
+
+            <blockquote>
+               “No child has to struggle alone if we are paying attention.”
+            </blockquote>
+
+            <p>
+              This chapter showed me the importance of support systems,accommodations, and teamwork in helping students succeed.
+            </p>
+
+            <p>
+                I learned that asking for help should never be seen as weakness.
+
+            </p>
+
+            <div class="tags">
+                <span>Support</span>
+                <span>Care</span>
+                <span>Collaboration</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CHAPTER 5
+========================= -->
+<div class="chapter-card fade-up">
+
+    <a href="chapter5.html"
+       class="chapter-btn"
+       style="text-decoration:none;">
+
+        <span>Chapter 5- Typical and Atypical Development</span>
+
+        <span class="icon">→</span>
+
+    </a>
+
+    <div class="chapter-content show">
+
+        <div class="chapter-image">
+
+            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1400&auto=format&fit=crop"
+            alt="Children learning and growing">
+
+
+        </div>
+
+        <div class="reflection-box">
+
+            <h2>Typical and Atypical Development</h2>
+
+            <blockquote>
+              “Growth isn’t a race; it’s a personal journey.”
+            </blockquote>
+
+            <p>
+              This chapter made me more patient and understanding toward children and their development.
+            </p>
+
+            <p>
+               I realized that every child learns differently and deserves compassion and support.
+
+            </p>
+
+            <div class="tags">
+                <span>Childhood</span>
+                <span>Growth</span>
+                <span>Understanding</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- =========================
+     CHAPTER 6
+========================= -->
+<div class="chapter-card fade-up">
+
+    <a href="chapter6.html"
+       class="chapter-btn"
+       style="text-decoration:none;">
+
+        <span>Chapter 6- Learners with Additional Needs</span>
+
+        <span class="icon">→</span>
+
+    </a>
+
+    <div class="chapter-content show">
+
+        <div class="chapter-image">
+
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop" 
+            alt="Student learning with support">
+
+
+        </div>
+
+        <div class="reflection-box">
+
+            <h2>Learners with Additional Needs</h2>
+
+            <blockquote>
+               “It’s about seeing what people can do, not only what they cannot.”
+            </blockquote>
+
+            <p>
+              This chapter reminded me that every learner has strengths even if they struggle in certain areas.
+            </p>
+
+            <p>
+               I became more aware of how inclusion and understanding can empower others.
+            </p>
+
+            <div class="tags">
+                <span>Emphathy</span>
+                <span>Strength</span>
+                <span>Support</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CHAPTER 7
+========================= -->
+<div class="chapter-card fade-up">
+
+    <a href="chapter7.html"
+       class="chapter-btn"
+       style="text-decoration:none;">
+
+        <span>Chapter 7- Learners in Other Marginalized Groups</span>
+
+        <span class="icon">→</span>
+
+    </a>
+
+    <div class="chapter-content show">
+
+        <div class="chapter-image">
+
+            <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=1400&auto=format&fit=crop" 
+            alt="Children in difficult situations">
+
+
+        </div>
+
+        <div class="reflection-box">
+
+            <h2>Learners in Other Marginalized Groups</h2>
+
+            <blockquote>
+               “Leaving no one behind must become a way of living.”
+            </blockquote>
+
+            <p>
+              This chapter deeply affected me because it revealed the struggles faced by children who are forgotten or denied opportunities.
+            </p>
+
+            <p>
+                It inspired me to become more socially aware and compassionate toward others.
+
+            </p>
+
+            <div class="tags">
+                <span>Humanity</span>
+                <span>Awareness</span>
+                <span>Responsibility</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="chapter-card fade-up">
+
+<button class="chapter-btn">
+
+<span>Chapter 7 — Learners in Other Marginalized Groups</span>
+
+<span class="icon">+</span>
+
+</button>
+
+<div class="chapter-content">
+
+<div class="chapter-image">
+
+
+
+</div>
+
+<div class="reflection-box">
+
+<h2>Learners in Other Marginalized Groups</h2>
+
+<blockquote>
+</blockquote>
+
+<p>
+</p>
+
+<p>
+It inspired me to become more socially aware and compassionate toward others.
+</p>
+
+<div class="tags">
+<span>Humanity</span>
+<span>Awareness</span>
+<span>Responsibility</span>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- LESSONS -->
+
+<section class="lessons" id="lessons">
+
+<div class="container fade-up">
+
+<h2>Lessons Learned</h2>
+
+<div class="lesson-grid">
+
+<div class="lesson-card">
+
+<h3>Empathy</h3>
+
+<p>
+Learning to understand people beyond appearances and assumptions.
+</p>
+
+</div>
+
+<div class="lesson-card">
+
+<h3>Inclusion</h3>
+
+<p>
+Creating safe spaces where everyone feels valued and respected.
+</p>
+
+</div>
+
+<div class="lesson-card">
+
+<h3>Responsibility</h3>
+
+<p>
+Using awareness and compassion to help build a fairer society.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>
+“Leaving no one behind begins with learning to truly see one another.”
+</h2>
+
+<p>
+© 2026 — The Spaces We Share
+</p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+window.onscroll = function(){
+
+let winScroll =
+document.body.scrollTop ||
+document.documentElement.scrollTop;
+
+let height =
+document.documentElement.scrollHeight -
+document.documentElement.clientHeight;
+
+let scrolled =
+(winScroll / height) * 100;
+
+document.getElementById("progressBar").style.width =
+scrolled + "%";
+
+};
+
+/* =========================
+   ACCORDION
+========================= */
+
+const buttons =
+document.querySelectorAll('.chapter-btn');
+
+buttons.forEach(button => {
+
+button.addEventListener('click', () => {
+
+const content =
+button.nextElementSibling;
+
+button.classList.toggle('active');
+
+content.classList.toggle('show');
+
+});
+
+});
+
+/* =========================
+   FADE ANIMATION
+========================= */
+
+const fadeElements =
+document.querySelectorAll('.fade-up');
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+
+});
+
+},{threshold:0.1});
+
+fadeElements.forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>

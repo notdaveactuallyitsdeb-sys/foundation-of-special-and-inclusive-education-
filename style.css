@@ -1,0 +1,738 @@
+/* =========================================
+   GOOGLE FONT FAMILY
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root{
+
+  --bg:#F8F6F2;
+
+  --text:#2C2C2C;
+
+  --accent:#7A9EB1;
+
+  --accent-dark:#5f8194;
+
+  --gold:#D8B36A;
+
+  --white:#ffffff;
+
+  --card:rgba(255,255,255,0.78);
+
+  --shadow:0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:'Inter',sans-serif;
+
+  background:var(--bg);
+
+  color:var(--text);
+
+  line-height:1.8;
+
+  overflow-x:hidden;
+
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.skip-link{
+
+  position:absolute;
+
+  left:-999px;
+
+  top:auto;
+
+}
+
+.skip-link:focus{
+
+  left:20px;
+
+  top:20px;
+
+  background:black;
+
+  color:white;
+
+  padding:10px 18px;
+
+  border-radius:8px;
+
+  z-index:9999;
+
+}
+
+button:focus,
+a:focus{
+
+  outline:3px solid var(--gold);
+
+  outline-offset:4px;
+
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#ece8e3;
+}
+
+::-webkit-scrollbar-thumb{
+  background:var(--accent);
+  border-radius:20px;
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-bar{
+
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  width:0%;
+
+  height:5px;
+
+  background:
+  linear-gradient(
+    to right,
+    var(--accent),
+    var(--gold)
+  );
+
+  z-index:9999;
+
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav{
+
+  position:fixed;
+
+  top:0;
+
+  width:100%;
+
+  z-index:999;
+
+  backdrop-filter:blur(12px);
+
+  background:rgba(255,255,255,0.55);
+
+  border-bottom:1px solid rgba(255,255,255,0.2);
+
+}
+
+.nav-container{
+
+  width:90%;
+
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:18px 0;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+.logo{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:1.5rem;
+
+  font-weight:700;
+
+}
+
+.nav-links{
+
+  display:flex;
+
+  gap:25px;
+
+}
+
+.nav-links a{
+
+  text-decoration:none;
+
+  color:var(--text);
+
+  font-weight:500;
+
+  transition:0.3s;
+
+}
+
+.nav-links a:hover{
+
+  color:var(--accent);
+
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero{
+
+  min-height:100vh;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)
+  ),
+
+  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop');
+
+  background-size:cover;
+
+  background-position:center;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  padding:120px 20px;
+
+  color:white;
+
+}
+
+.hero-content{
+
+  max-width:850px;
+
+}
+
+.hero h1{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:clamp(3rem,8vw,5.5rem);
+
+  line-height:1.1;
+
+  margin-bottom:25px;
+
+}
+
+.hero p{
+
+  font-size:1.2rem;
+
+  opacity:0.95;
+
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container{
+
+  width:90%;
+
+  max-width:1100px;
+
+  margin:auto;
+
+}
+
+/* =========================================
+   INTRO SECTION
+========================================= */
+
+.intro{
+
+  padding:100px 0;
+
+  text-align:center;
+
+}
+
+.intro h2{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:clamp(2rem,5vw,3rem);
+
+  margin-bottom:30px;
+
+}
+
+.intro p{
+
+  max-width:800px;
+
+  margin:auto;
+
+  font-size:1.08rem;
+
+  color:#555;
+
+}
+
+/* =========================================
+   CHAPTERS SECTION
+========================================= */
+
+#chapters{
+
+  padding-bottom:100px;
+
+}
+
+.chapter-card{
+
+  margin-bottom:35px;
+
+  border-radius:28px;
+
+  overflow:hidden;
+
+  background:var(--card);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:var(--shadow);
+
+  transition:0.4s ease;
+
+}
+
+.chapter-card:hover{
+
+  transform:translateY(-4px);
+
+}
+
+/* =========================================
+   CHAPTER BUTTON
+========================================= */
+
+.chapter-btn{
+
+  width:100%;
+
+  border:none;
+
+  background:
+  linear-gradient(
+    to right,
+    var(--accent),
+    #97b5c4
+  );
+
+  color:white;
+
+  padding:25px 30px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  font-size:1.08rem;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+.chapter-btn:hover{
+
+  background:
+  linear-gradient(
+    to right,
+    var(--accent-dark),
+    var(--accent)
+  );
+
+}
+
+.chapter-btn.active{
+
+  background:
+  linear-gradient(
+    to right,
+    var(--accent-dark),
+    #6f95a8
+  );
+
+}
+
+/* =========================================
+   ICON
+========================================= */
+
+.icon{
+
+  font-size:2rem;
+
+  transition:0.3s ease;
+
+}
+
+.chapter-btn.active .icon{
+
+  transform:rotate(45deg);
+
+}
+
+/* =========================================
+   CHAPTER CONTENT
+========================================= */
+
+.chapter-content{
+
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:max-height 0.7s ease;
+
+  background:white;
+
+}
+
+.chapter-content.show{
+
+  max-height:3000px;
+
+}
+
+/* =========================================
+   CHAPTER IMAGE
+========================================= */
+
+.chapter-image{
+
+  width:100%;
+
+  height:420px;
+
+  overflow:hidden;
+
+}
+
+.chapter-image img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:0.5s ease;
+
+}
+
+.chapter-image:hover img{
+
+  transform:scale(1.05);
+
+}
+
+/* =========================================
+   REFLECTION BOX
+========================================= */
+
+.reflection-box{
+
+  padding:45px;
+
+}
+
+.reflection-box h2{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:clamp(2rem,5vw,3rem);
+
+  margin-bottom:25px;
+
+  color:var(--text);
+
+}
+
+.reflection-box p{
+
+  margin-bottom:25px;
+
+  font-size:1.05rem;
+
+  color:#444;
+
+}
+
+/* =========================================
+   BLOCKQUOTE
+========================================= */
+
+blockquote{
+
+  margin:35px 0;
+
+  padding:30px;
+
+  background:#f6f5f2;
+
+  border-left:5px solid var(--gold);
+
+  border-radius:18px;
+
+  font-size:1.4rem;
+
+  font-style:italic;
+
+  font-family:'Playfair Display',serif;
+
+  color:#555;
+
+}
+
+/* =========================================
+   TAGS
+========================================= */
+
+.tags{
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-top:35px;
+
+}
+
+.tags span{
+
+  background:#edf3f6;
+
+  color:#5b7b8b;
+
+  padding:10px 18px;
+
+  border-radius:50px;
+
+  font-size:0.9rem;
+
+  font-weight:600;
+
+}
+
+/* =========================================
+   LESSONS SECTION
+========================================= */
+
+.lessons{
+
+  padding:100px 0;
+
+}
+
+.lessons h2{
+
+  text-align:center;
+
+  font-family:'Playfair Display',serif;
+
+  font-size:clamp(2rem,5vw,3rem);
+
+  margin-bottom:50px;
+
+}
+
+.lesson-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:25px;
+
+}
+
+.lesson-card{
+
+  background:white;
+
+  padding:35px;
+
+  border-radius:24px;
+
+  box-shadow:var(--shadow);
+
+  transition:0.4s;
+
+}
+
+.lesson-card:hover{
+
+  transform:translateY(-6px);
+
+}
+
+.lesson-card h3{
+
+  margin-bottom:15px;
+
+  font-family:'Playfair Display',serif;
+
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+  background:#ece7df;
+
+  text-align:center;
+
+  padding:70px 20px;
+
+}
+
+footer h2{
+
+  font-family:'Playfair Display',serif;
+
+  margin-bottom:20px;
+
+}
+
+footer p{
+
+  color:#666;
+
+}
+
+/* =========================================
+   FADE-UP ANIMATION
+========================================= */
+
+.fade-up{
+
+  opacity:0;
+
+  transform:translateY(40px);
+
+  transition:1s ease;
+
+}
+
+.fade-up.show{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media(max-width:768px){
+
+  .nav-links{
+
+    display:none;
+
+  }
+
+  .hero{
+
+    padding-top:140px;
+
+  }
+
+  .chapter-btn{
+
+    padding:22px;
+
+    font-size:1rem;
+
+  }
+
+  .reflection-box{
+
+    padding:28px;
+
+  }
+
+  .chapter-image{
+
+    height:260px;
+
+  }
+
+  blockquote{
+
+    font-size:1.1rem;
+
+  }
+
+}

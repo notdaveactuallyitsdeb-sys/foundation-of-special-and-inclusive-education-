@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About the Author</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   BASE STYLES
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#F8F6F2;
+  color:#2C2C2C;
+  line-height:1.8;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+  height:60vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+
+  url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1400&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  color:white;
+
+  padding:20px;
+
+}
+
+.hero h1{
+  font-size:clamp(2.5rem,6vw,4rem);
+  font-family:'Playfair Display',serif;
+}
+
+.hero p{
+  opacity:0.9;
+  margin-top:10px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+  width:90%;
+  max-width:1000px;
+  margin:auto;
+  padding:80px 0;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+  background:white;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.card img{
+
+  width:100%;
+  height:400px;
+  object-fit:cover;
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+  padding:45px;
+}
+
+.content h2{
+
+  font-size:2.5rem;
+  font-family:'Playfair Display',serif;
+  margin-bottom:15px;
+
+}
+
+.content p{
+  margin-bottom:20px;
+  color:#444;
+}
+
+/* =========================
+   HIGHLIGHT BOX
+========================= */
+
+.highlight{
+
+  background:#f4f4f4;
+  border-left:5px solid #D8B36A;
+
+  padding:25px;
+
+  border-radius:15px;
+
+  margin:30px 0;
+
+  font-style:italic;
+
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tags{
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:25px;
+
+}
+
+.tags span{
+
+  background:#edf3f6;
+  color:#5b7b8b;
+
+  padding:8px 14px;
+
+  border-radius:50px;
+
+  font-size:0.85rem;
+
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back{
+
+  display:inline-block;
+  margin-top:30px;
+
+  text-decoration:none;
+
+  background:#7A9EB1;
+  color:white;
+
+  padding:12px 25px;
+
+  border-radius:50px;
+
+  transition:0.3s;
+
+  font-weight:600;
+
+}
+
+.back:hover{
+  background:#5f8194;
+  transform:translateY(-3px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .content{
+    padding:25px;
+  }
+
+  .content h2{
+    font-size:1.8rem;
+  }
+
+  .card img{
+    height:250px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>About the Author</h1>
+
+<p>A journey of becoming a future educator</p>
+
+</div>
+
+</section>
+
+<!-- CONTENT -->
+
+<section class="container">
+
+<div class="card">
+
+<img src="images/Gemini_Generated_Image_eq4rpmeq4rpmeq4r.pngGemini_Generated_Image_eq4rpmeq4rpmeq4r.png"
+alt="My photo">
+
+<div class="content">
+
+<h2>Dave</h2>
+
+<p>
+My name is Dave, a proud 18-year-old resident of Barangay Santa Ana in La Paz, Leyte.
+I am currently a first-year college student taking up the Bachelor of Secondary Education,
+majoring in Science (BSED Science).
+</p>
+
+<p>
+Living in a small, close-knit community has taught me the value of helping others and staying connected to my roots.
+As I start my journey in higher education, I am fueled by a strong desire to learn and a dream to one day give back
+to my hometown through the power of teaching.
+</p>
+
+<div class="highlight">
+
+Ever since I chose this path, my goal has been to become a teacher who does more than just explain science experiments.
+I want to be a mentor who inspires curiosity and makes every student feel welcome in the classroom.
+
+</div>
+
+<p>
+Being a future educator means I have a big responsibility to shape the minds of the next generation.
+I am committed to improving myself every day by studying hard and practicing patience,
+so that when I finally stand in front of a class, I can lead with both knowledge and a kind heart.
+</p>
+
+<p>
+Studying foundations of special and inclusive education has deeply changed the way I see my future profession.
+I now understand that a true classroom is one where every learner—regardless of their abilities or background—is given a fair chance to succeed.
+This knowledge has made me more compassionate and has shown me that the heart of teaching is making sure every student feels they belong.
+</p>
+
+<div class="tags">
+
+<span>Future Teacher</span>
+<span>BSED Science</span>
+<span>Inclusive Education</span>
+<span>Dreamer</span>
+
+</div>
+
+<a href="index.html" class="back">← Back to Blog</a>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+
+</html>
